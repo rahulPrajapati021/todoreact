@@ -8,8 +8,8 @@ export default function Form() {
   const dispatcher = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    setInputStr("");
     dispatcher(addTodo(inputStr));
+    setInputStr("");
   }
   return (
     <div>
