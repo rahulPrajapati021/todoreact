@@ -1,15 +1,20 @@
 import React from "react";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
+import { Provider } from "react-redux";
+
+import store from "./utils/Store.js";
 
 export default function App() {
   return (
-    <div>
-      <div className="w-[600px] border-2 m-auto">
-        <h1 className="text-3xl text-center font-bold">Todo App</h1>
-        <Form />
-        <TodoList />
+    <Provider store={store}>
+      <div>
+        <div className="w-[600px] my-4 mx-auto">
+          <h1 className="text-3xl text-center font-bold my-4">Todo App</h1>
+          <Form />
+          <TodoList />
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 }
